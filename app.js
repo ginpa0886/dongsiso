@@ -1,8 +1,8 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-var main = require('./router/main')
-var email = require('./router/email')
+var router = require('./router/index')
+
 
 
 app.listen(3000, function(){
@@ -14,13 +14,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs')
 
+app.use(router)
 
-app.use('/main', main)
-app.use('/email', email)
 
-//url routing ok...
-app.get('/', function(req,res){
-    //res.send("")
-    res.sendFile(__dirname + "/public/main.html")
-});
+
 
