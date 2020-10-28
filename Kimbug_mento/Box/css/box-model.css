@@ -1,0 +1,14 @@
+
+.box{
+    width: 300px;
+    height: 300px;
+    border: 1px #000 solid;
+    /* border-radius: 50%; */
+    border-top-left-radius: 10px ;
+    padding-left: 30px;
+    padding-top: 20px;
+    background-color: hotpink;
+    margin-bottom: 30px;
+    /* margin: 20px 40px; top-botton, right-left가 서로 짝을 이루어짐(안적혀 있으면)
+    padding: 10px 20px 30px 40px; */
+}

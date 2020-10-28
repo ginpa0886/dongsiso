@@ -1,0 +1,15 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+.box-sizing{
+    box-sizing: border-box;
+    width: 480px;
+    height: 480px;
+    background-color: #0066ff;
+    color: #fff;
+    padding-top: 40px;
+    padding-left: 50px;
+}
