@@ -1,19 +1,19 @@
-'use strict'
+// 'use strict'
 
-//Array😂😂
+// Array😂😂
 
-// // 1. 배열 선언
-// const arr1 = new Array();
-// const arr2 = [1, 2];
+// 1. 배열 선언
+const arr1 = new Array();
+const arr2 = [1, 2];
 
-// // 2. Index position
-// const fruits = ['🍎','🍌'];
-// console.log(fruits);  //['🍎', '🍌']
-// console.log(fruits.length);  //2
-// console.log(fruits[0]);
-// console.log(fruits[1]);
-// console.log(fruits[2]);  //undefine
-// console.log(fruits[fruits.length-1]);
+// 2. Index position
+const fruits = ['🍎','🍌'];
+console.log(fruits);  //['🍎', '🍌']
+console.log(fruits.length);  //2
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);  //undefine
+console.log(fruits[fruits.length-1]);
 
 // 3. Looping over an array
 // print all fruits
@@ -59,7 +59,8 @@ console.log(fruits); //["🍏", "🍎", "🍌"]
 // 뒤에서만 하는 것은 가장 뒤에 있는 배열공간만 쓰면되는데
 // 앞에서 부터 하면 모든 데이터를 하나씩 밀어내야함
 
-//splice : remove an item by index position
+// splice : remove an item by index position
+// 삽입과 
 fruits.push('🍉','🍍');
 console.log(fruits); //["🍏", "🍎", "🍌", "🍉", "🍍"]
 // fruits.splice(1); // splice(몇번째 부터, 몇개를)

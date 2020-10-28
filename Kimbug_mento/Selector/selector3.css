@@ -1,0 +1,16 @@
+ 
+ a:hover{
+     background-color: pink;
+ }
+
+ a:active{
+     background-color: purple;
+ }
+
+ input:focus{
+     border-color: blue;
+ }
+
+ input:active{
+     border-color: skyblue;
+ }

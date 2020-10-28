@@ -1,0 +1,16 @@
+
+
+
+
+li:first-child{
+    color: #0066ff;
+}
+
+li:last-child{
+    color: yellow;
+}
+
+li:nth-child(2){
+    color: red;
+} 
+/* // 짝수는 2n, 홀수2n-1 */
