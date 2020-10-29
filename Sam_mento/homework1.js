@@ -62,11 +62,11 @@ console.log(solution(numbers));
 
 //length의 기능 확인
 let dong = 'dongwon';
-console.log(dong.length);
+console.log(dong.length);  //7
 
 //charAt() 기능 확인
-let name = dong.charAt(0);
-let name2 = dong.charAt(4);
+let name = dong.charAt(0); //d
+let name2 = dong.charAt(4);  //g
 console.log(name);
 console.log(name2);
 
@@ -179,3 +179,7 @@ console.log(middlename3(exercise6));
 
 
 
+// -------------------------------------------------------------------
+function baseBallGame(attack){
+    const attack = 
+}
