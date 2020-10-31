@@ -29,28 +29,54 @@ console.log(mySolution(arr));
 
 //---------------------------------------------------
 ////진행중인 2번
-// const arr = ["sun", "bed","car"];
+const arr = ["abce", "abcd", "cdx"];
 
-// function solution(arr, n){
-//     const answer = [];
-//     const dong = [];
-//     let num =0;
-//     for( let i = 0; i < arr.length; i++){
-//         for( let h = n; n < arr.length; n++){
-//             num += arr[i].charAt(n-1);
+function checkString(arr, n){
+    let answer = [];
+    let dong = [];
+    let length = arr.length;
+    for(let i = 0; i < length; i++){
+        // answer[i] = arr[i].charAt(n);
+        for(let h = 0; h < arr[i].length - n; h++){
+            if( h === 0 ){
+                answer[i] = arr[i].charAt(n);
+                dong[i] = arr[i].charAt(n);
+            }else{
+                answer[i] += arr[i].charAt(n + h);
+                dong[i] += arr[i].charAt(n + h);
+            }
+        }
+    }
+    answer.sort();
+    for( let i = 0; i < length; i++){
+        for( let h = 0; h < dong.length; h++){
+            if( answer[i] === dong[h]) {
+                answer[i] = arr[h];
+            }
+        }
+    }
+    return answer;
+}
+
+
+console.log(checkString(arr, 2));
+
+
+////질문
+// const dong = ["abce", "abcd", "cdx"];
+
+// function solution(strings, n){
+//     strings.sort((a, b) => {
+//         if(a[n] === b[n]){
+//             return a.localeCompare(b);
+//         } else{
+//             return a[n].localeCompare(b[n]);
 //         }
-//         answer[i] = num;
-//     }
-
-
-
-
-
-
-//     return answer;
+//     });
+//     return strings;
 // }
 
-// console.log(solution(arr, 2));
+// console.log(solution(dong));
 
 
 //--------------------------------------------------------
