@@ -28,38 +28,49 @@ function mySolution(arr)
 console.log(mySolution(arr));
 
 //---------------------------------------------------
-////진행중인 2번
-const arr = ["abce", "abcd", "cdx"];
-
-function checkString(arr, n){
-    let answer = [];
-    let dong = [];
-    let length = arr.length;
-    for(let i = 0; i < length; i++){
-        // answer[i] = arr[i].charAt(n);
-        for(let h = 0; h < arr[i].length - n; h++){
-            if( h === 0 ){
-                answer[i] = arr[i].charAt(n);
-                dong[i] = arr[i].charAt(n);
-            }else{
-                answer[i] += arr[i].charAt(n + h);
-                dong[i] += arr[i].charAt(n + h);
-            }
+////2번
+function test(arr, n){
+    arr.sort((a,b) =>{
+        if(a[n] === b[n]){
+            return a.localeCompare(b);
+        }else{
+            return a[n].localeCompare(b[n]);
         }
-    }
-    answer.sort();
-    for( let i = 0; i < length; i++){
-        for( let h = 0; h < dong.length; h++){
-            if( answer[i] === dong[h]) {
-                answer[i] = arr[h];
-            }
-        }
-    }
-    return answer;
+    } );
+    return arr;
+    
 }
+// const arr = ["abce", "abcd", "cdx"];
+
+// function checkString(arr, n){
+//     let answer = [];
+//     let dong = [];
+//     let length = arr.length;
+//     for(let i = 0; i < length; i++){
+//         // answer[i] = arr[i].charAt(n);
+//         for(let h = 0; h < arr[i].length - n; h++){
+//             if( h === 0 ){
+//                 answer[i] = arr[i].charAt(n);
+//                 dong[i] = arr[i].charAt(n);
+//             }else{
+//                 answer[i] += arr[i].charAt(n + h);
+//                 dong[i] += arr[i].charAt(n + h);
+//             }
+//         }
+//     }
+//     answer.sort();
+//     for( let i = 0; i < length; i++){
+//         for( let h = 0; h < dong.length; h++){
+//             if( answer[i] === dong[h]) {
+//                 answer[i] = arr[h];
+//             }
+//         }
+//     }
+//     return answer;
+// }
 
 
-console.log(checkString(arr, 2));
+// console.log(checkString(arr, 2));
 
 
 ////질문

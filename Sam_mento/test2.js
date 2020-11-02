@@ -1,21 +1,21 @@
 let n = 45;
 
 function tenten(n){
-    let answer = 0;
+    let answer = [];
     let num = 0;
     for(let i =16; i >= 0; i--){
         if(i === 16){
-            answer += parseInt(n/Math.pow(3, i))*Math.pow(10, i);
+            answer[i] = parseInt(n/Math.pow(3, i))*Math.pow(10, i);
             num = n%Math.pow(3, i)
             // console.log(answer);
             // console.log(num);
-        }else{
-            answer += parseInt(num/Math.pow(3, i))*Math.pow(10, i);
+        }else {
+            answer[i] += parseInt(num/Math.pow(3, i))*Math.pow(10, i);
             num = num%Math.pow(3, i)
         }
     }
 
-    
+   
 
     // function rev(answer){
     //     let reversed = answer
@@ -47,22 +47,23 @@ function tenten(n){
 
     return answer;
 }
-let v = 1250;
-v.toString("");
-// v.toString().length;
+// let v = 1250;
+// v.toString();
+// v.split('');
+// // v.toString().length;
 
-function rev(n){
-    let reversed = n
-    .toString()
-    .split("")
-    .reverse()
-    .join("");
+// function rev(n){
+//     let reversed = n
+//     .toString()
+//     .split("")
+//     .reverse()
+//     .join("");
 
-    return reversed;
-}
+//     return reversed;
+// }
 
-console.log(rev(v));
-console.log(v);
+// console.log(rev(v));
+// console.log(v);
 console.log(tenten(n));
 
 

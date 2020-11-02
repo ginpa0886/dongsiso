@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.user-email button{
+    
+    width: 90px;
+    height: 36px;
+    color: white;
+    border: none;
+    background-color: #2860E1;
+    border-radius: 4px;
+}
