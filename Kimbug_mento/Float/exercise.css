@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: gray;
+}
+
+
+.parent{
+    max-width : 540px;
+    
+    background-color: white;
+    border-color: none;
+}
+
+.parent::after{
+    display: block;
+    content: '';
+    clear: left;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.child{
+    float: left;
+    margin-right: 16px;
+}
+
+a{
+    line-height: 20px;
+    text-decoration: none;
+    color: #8492A6;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.child a{
+    display: block;
+    padding: 16px 20px;
+}

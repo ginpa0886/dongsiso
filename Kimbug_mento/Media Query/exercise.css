@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.box{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: salmon;
+    font-size: 100px;
+    color: white;
+}
+
+.box::after{
+    content: 'salmon';
+}
+
+@media screen and (min-width: 566px){
+    /* CSS선언 */
+    .box{
+        background-color: teal;
+    }
+
+    .box::after{
+        content: 'teal';
+    }
+}
+
+@media screen and (min-width: 660px){
+    .box{
+        background-color: wheat;
+    }
+
+    .box::after{
+        content: 'wheat';
+    }
+}
+
+@media screen and (min-width: 750px) and  (max-width: 900px){
+    .box{
+        background-color: skyblue;
+    }
+
+    .box::after{
+        content: 'skyblue';
+    }
+}
