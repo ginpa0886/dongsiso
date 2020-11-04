@@ -14,20 +14,15 @@ function happy(n, m){
             won.push(i);
         }
     }
-
-    for(let i = 0; i < dong.length; i++){
-        for(let h = 0; h < won.length; h++){
-            if(dong[i] === won[h]){
-                answer.push(dong[i]);
-            }
-        }
-    }
+    // console.log(dong);
+    // console.log(won);
+    dong = dong.filter((num) => won.includes(num));
+    dong.reverse();
+    answer.push(dong[0]);
+    answer.push(dong[0]*parseInt(n/dong[0])*parseInt(m/dong[0]));
+    // console.log(filternum[filternum.length-1]);
     
-    answer.reverse();
-    if(answer[0] === 1){
-        answer[1] = n*m;
-    }
-    return answer;
+    return answer
 }
 
-console.log(happy(2,5));
+console.log(happy(3, 12));

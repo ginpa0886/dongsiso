@@ -1,0 +1,88 @@
+
+body{
+    font-family: 'Noto sans KR', sans-serif;
+    letter-spacing: -0.015em;
+}
+
+/* font size */
+
+.Fs-tiny{
+    font-size: 12px;
+    line-height: 1.3333333;
+}
+
+.Fs-small{
+    font-size: 14px;
+    line-height: 1.42857142857;
+}
+
+.Fs-base{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.Fs-medium{
+    font-size: 18px;
+    line-height: 1.55555555;
+}
+
+.Fs-large{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.Fs-H2{
+    font-size: 28px;
+    line-height: 1.428571428;
+}
+
+.Fs-H1{
+    font-size: 34px;
+    line-height: 1.411764705;
+}
+
+/* font weight */
+
+.Fw-light{
+    font-weight: 300;
+}
+
+.Fw-regular{
+    font-weight: 400;
+}
+
+.Fw-medium{
+    font-weight: 500;
+}
+
+.Fw-bold{
+    font-weight: 700;
+}
+
+/* font color */
+
+.text-dark{
+    color: #1F2D3D;
+}
+.text-primary{
+    color: #3C4858;
+}
+.text-secondary{
+    color: #8492A6;
+}
+.text-teriary{
+    color: #C0CCDA;
+}
+.text-white{
+    color: #FFFFFF;
+}
+.text-success{
+    color: #13CE66;
+}
+.text-error{
+    color: #FF5216;
+}
+.text-info{
+    color: #009EEB;
+}
+

@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.like-button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* ▼ WHERE YOUR CODE BEGINS */
+
+
+  .property-detail dd{
+      font-size: 14px;
+      line-height: 1.1428571428;
+      font-weight: 400;
+      color: #7D858F;
+  }
+
+  body{
+      background-color: gray;
+  }
+  .card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 840px;
+    height: 248px;
+    background-color: white;
+    padding: 24px;
+  }
+  
+
+  .card-title{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #151B26;
+  }
+
+  .property-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+     
+  .property-rate{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+
+  .property-type span{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: #7D858F;
+  }
+
+  .card-image{
+      background-image: url(./img/img-house.jpg);
+      background-size: contain;
+      width: 384px;
+      height: 199px;
+      border: none;
+  }
+
+  .like-button{
+      background-image: url(./img/icon-favorite.svg);
+      background-size: 21px 19.52px;
+      background-position: center;
+      width: 36px;
+      height: 36px;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+  }
+
+  .plus-badge{
+      width: 48px;
+      height: 22px;
+      color: white;
+      font-size: 14px;
+      line-height: 1.428571428;
+      background-color: #92174D;
+      border-radius: 4px;
+      margin-right: 8px;
+  }
+
+  .property-rate{
+      width: 13.33px;
+      height: 12.67px;
+      background-image: url(./img/icon-star.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 400;
+  }
+
+  .property-rate span{
+      display: block;
+  }
+
+  .property-rate strong{
+      color: #151B26;
+  }
+
+  .property-rate span{
+      color: #7D858F;
+  }
+  
