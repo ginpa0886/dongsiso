@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: gray;
+    position: relative;
+}
+
+.button-c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+    height: 56px;
+    background-color: white;
+    border: white;
+    font-size: 16px;
+    line-height: 1.25;
+    transition: border-bottom 500ms ;
+    cursor: pointer;
+}
+
+.button-c:hover{
+   border-bottom: 2px solid blue;
+}

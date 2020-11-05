@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; 이게 가끔 안먹힐때는 class안에 직접 값을 주면됨 */
+
+
+}
+
+button{
+    background-color: white;
+    border: none;
+}
+
+.line-button{
+    position: relative;
+    padding: 18px 30px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #151B26;
+    cursor: pointer;
+}
+
+.line-button:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: width 250ms ease-in,
+                background-color 250ms ease-in;
+}
+
+.line-button:hover::after{
+    width: 100%;
+    background-color: pink;
+}

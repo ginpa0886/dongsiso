@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+	width: 400px;
+	height: 400px;
+    background-color: blue;
+    color: white;
+    font-size: 50px;
+    transition: background-color 200ms ease-out 3000ms;
+    
+
+	/* animation-name: dongwon;
+	animation-duration: 2000ms;
+	animation-timing-function: ease-out;
+	animation-delay: 200ms;
+	animation-iteration-count: 3;
+	animation-direction: alternate; */
+}
+
+.box:hover{
+    background-color: teal;
+}
+
+
+
+
+/* @keyframes dongwon {
+	from {
+		top: 0;
+		background-color: blue;
+	}
+	
+	to {
+		top: 200px;
+		background-color: red;
+	}
+} */

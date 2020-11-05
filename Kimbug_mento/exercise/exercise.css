@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+    background-color: gray;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 386px;
+    height: 304px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px 40px;
+}
+
+.user-image{
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.user-profile{
+    text-align: center;
+}
+
+.user-profile h1{
+    font-size: 18px;
+    line-height: 1.33333333333;
+    color: #273444;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.user-profile span{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4285714285;
+    color: #8492A6;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.user-pop{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.user-pop-date{
+    text-align: center;
+}
+
+.user-pop-date dt{
+    color: #8492A6;
+    font-size: 12px;
+    line-height: 1.6666666666;
+    font-weight: 600;
+}
+
+.user-pop-date dd{
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 300;
+    color: #0066FF;
+}
