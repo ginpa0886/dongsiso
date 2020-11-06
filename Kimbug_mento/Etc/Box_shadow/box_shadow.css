@@ -20,9 +20,7 @@ body{
     width: 705px;
     height: 265px;
     background-color: white;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
+    
 }
 
 .cancel-button{
@@ -34,11 +32,11 @@ body{
     color: white;
     border: none;
     border-radius: 100px;
+    transition: box-shadow 250ms ease-in;
+    cursor: pointer;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
-    transition: box-shadow 250ms ease-in;
-    cursor: pointer;
 
  }
 
@@ -55,11 +53,11 @@ body{
     color: white;
     border: none;
     border-radius: 100px;
+    transition: box-shadow 250ms ease-in;
+    cursor: pointer;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
-    transition: box-shadow 250ms ease-in;
-    cursor: pointer;
 }
 
 .confirm-button:hover{

@@ -20,11 +20,7 @@ function steal(n,lost, reserve) {
     }
 
     for(let i = 1; i<arr.length; i++){
-        if(arr[0] === 0 && arr[i] === 2){
-            arr[0]++;
-            arr[i]--;
-        }
-        else if(arr[i-1] === 0 && arr[i] === 2){
+        if(arr[i-1] === 0 && arr[i] === 2){
             arr[i-1]++;
             arr[i]--;
         }
