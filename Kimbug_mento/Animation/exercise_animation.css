@@ -1,0 +1,85 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+    background-color: gray;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    
+    width: 500px;
+    height: 216px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3333333333;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.loading-title{
+    margin-bottom: 20px;
+    color: #151B26;
+    animation-name: won;
+    animation-duration: 1200ms;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 250ms;
+}
+
+.progress-bar{
+    width: 300px;
+    height: 12px;
+    background-color: #E5EAEF;
+    border-radius: 100px;
+}
+
+.progress-bar span{
+    display: block;
+}
+
+.progress-bar-gauge{
+    width: 0px;
+    height: 12px;
+    background-color: #13CE66;
+    border-radius: 100px;
+    animation-name: dong;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes dong{
+    from{
+        width: 0px;
+    }
+
+    to{
+        width: 300px;
+    }
+}
+
+@keyframes won{
+    from{
+        color:  #151B26;
+    }
+    to{
+        color: white;
+    }
+}

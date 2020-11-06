@@ -57,3 +57,16 @@ function steal(n,lost, reserve) {
 
 
 console.log(steal(5,lost, reserve));
+
+
+
+
+
+////위대하군요
+// function solution(n, lost, reserve) {      
+//     return n - lost.filter(a => {
+//         const b = reserve.find(r => Math.abs(r-a) <= 1)
+//         if(!b) return true
+//         reserve = reserve.filter(r => r !== b)
+//     }).length
+// }
