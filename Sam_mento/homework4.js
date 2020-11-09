@@ -3,10 +3,11 @@
 
 const reserve = [1,3,5];
 const lost = [2,4];
+
 function steal(n,lost, reserve) {
-    let answer =0;
-    const arr = [];
-    let count = 0;
+    // let answer =0;
+    let arr = [];
+    // let count = 0;
     for(let i = 0; i<n; i++){
             arr.push(1);
     }
@@ -34,17 +35,17 @@ function steal(n,lost, reserve) {
         }
     }
 
-    for(let i = 0; i<arr.length; i++){
-        if(arr[i] !== 0){
-            count++;
-        }
-    }
+    // for(let i = 0; i<arr.length; i++){
+    //     if(arr[i] !== 0){
+    //         count++;
+    //     }
+    // }
 
-   answer = count;
+   arr = arr.filter( n => n > 0);
 
 
 
-    return answer;
+    return arr.length;
 
 }
 
