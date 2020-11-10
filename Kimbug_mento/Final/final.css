@@ -8,6 +8,8 @@ body{
     
 }
 
+
+
 .header{
     width: 100%;
     height: 568px;
@@ -18,6 +20,10 @@ body{
     text-align: center;
 }
 
+header .container{
+    max-width: 960px;
+}
+
 .header h1{
     font-size: 40px;
     font-weight: 700;
@@ -26,14 +32,33 @@ body{
     margin-bottom: 24px;
 }
 
-
+.header p,
 .header span{
-    display: block;
     font-size: 16px;
     line-height: 1.375;
     color: #2B292D;
     letter-spacing: -0.01em;
+}
+
+.header p{
+    margin-bottom: 0;
+}
+
+.header span{
+    display: block;
+    
+}
+
+.fronted-message{
+    width: 100%;
+    height: auto;
     margin-bottom: 24px;
+}
+
+.hidden-message{
+    width: 0;
+    height: 0;
+    margin: none;
 }
 
 
@@ -83,6 +108,9 @@ body{
     align-items: center;
 }
 
+main header .container{
+    max-width: 960px;
+}
 
 
 .explain2 h1,
@@ -110,6 +138,10 @@ body{
     width: 100%;
     height: 1377px;
     padding: 80px 0;
+}
+
+main article .container{
+    max-width: 960px;
 }
 
 .article-content{
@@ -202,6 +234,8 @@ body{
     padding: 80px 0;
 }
 
+
+
 .article-curriculum-content1 span{
     display: block;
     font-size: 16px;
@@ -242,8 +276,14 @@ body{
     font-weight: 700;
     line-height: 1.6;
     letter-spacing: -0.05em;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
+
+.img-curriculum{
+    width: 0;
+    height: 0;
+}
+
 
 .article-curriculum-content2{
     margin-bottom: 40px;
@@ -286,7 +326,7 @@ body{
     margin-bottom: 41px;
 }
 
-.article-banner-content1 h1{
+.article-banner-content2 h1{
     font-size: 32px;
     font-weight: 700;
     line-height: 1;
@@ -295,7 +335,7 @@ body{
     margin-bottom: 16px;
 }
 
-.article-banner-content1 p{
+.article-banner-content2 p{
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -317,6 +357,7 @@ body{
 }
 
 .article-banner-content2 button{
+    font-family: 'DM Sans', sans-serif;
     width: 290px;
     height: 48px;
     background-color: #3040C4;
@@ -352,7 +393,11 @@ footer{
     padding: 24px 0;
 }
 
-footer span{
+footer .container{
+    max-width: 960px;
+}
+
+footer a{
     font-size: 14px;
     line-height: 1.7142857142;
     letter-spacing: -0.01em;
@@ -369,10 +414,26 @@ footer span{
         margin-bottom: 32px;
     }
 
+    .header p,
     .header span{
         font-size: 22px;
         line-height: 1.4545454545;
     }
+
+    .fronted-message{
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+    
+    .hidden-message{
+        width: 100%;
+        height: auto;
+        margin-bottom: 32px;
+    }
+
+
     .learn-more-button,
     .apply-button{
         width: 160px;
@@ -392,7 +453,11 @@ footer span{
 
     .main-header{
         height: 340px;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
     }
+
 
     .explain2 h1,
     .explain1 h1{
@@ -406,12 +471,8 @@ footer span{
         line-height: 1.4545454545;
     }
 
-    .explain1{
+    .explain1 p{
         margin-right: 110px;
-    }
-
-    .main-header{
-        height: 827px;
     }
 
     .article-content{
@@ -449,8 +510,24 @@ footer span{
     .img1{
         
         height: 299px;
-        flex-direction: row;
+        flex-direction: column;
         margin-right: 30px;
+        cursor: pointer;
+    }
+
+    .img3:hover,
+    .img2:hover,
+    .img1:hover{
+        width: 100%;
+        height: 299px;
+        background-color: #3141C5;
+        
+    }
+
+    .img3:hover span,
+    .img2:hover span,
+    .img1:hover span{
+        color: white;
     }
 
     .img3 img,
@@ -466,6 +543,137 @@ footer span{
         line-height: 1.2;
     }
 
+        
+    .article-curriculum{
+        height: 728px;
+    }
+
+    .article-curriculum-content1 span{
+        font-size: 22px;
+        line-height: 1.0909090909;
+        margin-bottom: 16px;
+    }
+
+    .article-curriculum-content1 h1{
+        font-size: 56px;
+        line-height: 1;
+        margin-bottom: 32px;
+    }
+
+    .article-curriculum-content1 p{
+        font-size: 22px;
+        line-height: 1.454545454;
+        margin-bottom: 72px;
+    }
+
+    .article-curriculum-content1 button{
+        content: 'Learn more';
+        width: 160px;
+        height: 56px;
+        font-size: 18px;
+        line-height: 1.55555555;
+        margin-bottom: 80px;
+    }
+
+    .img-curriculum{
+        width: 450px;
+        height: 450px;
+    }
+
+    .article-curriculum-content2{
+        margin-bottom: 0;
+    }
+
+    .article-curriculum-content3 p,
+    .article-curriculum-content3 strong,
+    .article-curriculum-content2 p,
+    .article-curriculum-content2 strong{
+        font-size: 18px;
+        line-height: 1.4444444444;
+    }
+
+    .article-banner{
+        height: 460px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .article-banner-content-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+
+    .article-banner-content1{
+        margin-right: 113px;
+    }
+
+    .article-banner-content1 img{
+        width: 287px;
+        height: 285px;
+        margin-bottom: 0;
+    }
+
+    .article-banner-content2{
+        align-items: flex-start;
+    }
+
+    .article-banner-content2-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .article-banner-content2 h1{
+        font-size: 40px;
+    }
+
+    .article-banner-content2 p{
+        font-size: 22px;
+        line-height: 1.45454545454;
+        text-align: start;
+    }
+
+    .article-banner-content2 input{
+        display: inline-block;
+        font-size: 18px;
+        line-height: 1.33333333333;
+        width: 362px;
+        height: 56px;
+    }
+
+    .article-banner-content2 button{
+        display: inline-block;
+        width: 160px;
+        height: 54.58px;
+        font-size: 18px;
+        line-height: 1.33333333333;
+        letter-spacing: -0.02em;
+    }
+
+    .article-banner-content2 span{
+        font-size: 14px;
+        line-height: 1.71428571428;
+    }
+
+    .footer{
+        height: 56px;
+    }
+
+    .terms{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .terms a{
+        margin-right: 16px;
+    }
 
 }
 
