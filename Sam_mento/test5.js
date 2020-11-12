@@ -90,22 +90,22 @@ console.log(solution(dong,won));
 
 
 function happy(dong, won){
-    //     let num1 = dong.sort();
-    //     let num2 = won.sort();
-    //     console.log(num1);
-    //     console.log(num2);
-    //     const length = num1.length;
-    //     const length2 = num2.length;
-    //     for(let i = length-1; i >= 0; i--){
-    //         for(let h = length2-1; h >= 0; h--){
-    //             if(num1[i] === num2[h]){
-    //                 num1.splice(num1.lastIndexOf(num1[i]),1);
-    //                 num2.splice(num2.lastIndexOf(num2[h],1));
-    //                 console.log(num1);
-    //                 console.log(num2);
-    //             }
-    //         }
-    //     }
+        let num1 = dong.sort();
+        let num2 = won.sort();
+        console.log(num1);
+        console.log(num2);
+        const length = num1.length;
+        const length2 = num2.length;
+        for(let i = length-1; i >= 0; i--){
+            for(let h = length2-1; h >= 0; h--){
+                if(num1[i] === num2[h]){
+                    num1.splice(num1.lastIndexOf(num1[i]),1);
+                    num2.splice(num2.lastIndexOf(num2[h],1));
+                    console.log(num1);
+                    console.log(num2);
+                }
+            }
+        }
     
-    //     return num1.join();
-    // }
+        return num1.join();
+    }

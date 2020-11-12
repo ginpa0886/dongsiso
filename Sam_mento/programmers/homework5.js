@@ -50,6 +50,7 @@ function happy(answers){
         student2[i] = st2[i % 8];
         student3[i] = st3[i % 10];
     }
+    
     for(let i = 0; i < n; i++){
         if(answers[i] === student1[i]){
             count1++;
