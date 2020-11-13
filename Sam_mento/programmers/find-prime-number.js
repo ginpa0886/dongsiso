@@ -1,39 +1,61 @@
 
 const n = 17;
 
-function findprime(n){
-   
-    let won = [];
-    let dong = []; 
-
-    for(let i = 0; i <= n; i++){
-        let answer =[];
-        if( i < 8){
-            for(let a = 1; a <= n; a++){
-                if( i % a === 0){
-                    answer.push(a);
-                }
+function happy(n){
+    let prime = [];
+    for(let i = 1; i <= n; i++){
+        let answer = [];
+        for(let h = 1; h <= i; h++){
+            if(i % h == 0){
+                answer.push(i);
+                console.log(answer);
             }
-            if(answer.length === 2){
-                won.push(answer[answer.length-1]);
-            }
-        }else{
-            for(let h = 0; h < won.length; h++){
-                if( i % won[h] === 0){
-                    break;
-                }else{
-                    won.push(i);
-                    break;
-                    
-                }
+            if(answer.length > 2){
+                break;
             }
         }
+        if(answer.length === 2){
+            prime.push(answer[1]);
+        }
     }
-
-    return won;
+    return prime.length;
 }
 
-console.log(findprime(17));
+console.log(happy(n));
+
+// function findprime(n){
+   
+//     let won = [];
+//     let dong = []; 
+
+//     for(let i = 0; i <= n; i++){
+//         let answer =[];
+//         if( i < 8){
+//             for(let a = 1; a <= n; a++){
+//                 if( i % a === 0){
+//                     answer.push(a);
+//                 }
+//             }
+//             if(answer.length === 2){
+//                 won.push(answer[answer.length-1]);
+//             }
+//         }else{
+//             for(let h = 0; h < won.length; h++){
+//                 if( i % won[h] === 0){
+//                     break;
+//                 }else{
+//                     won.push(i);
+//                     break;
+                    
+//                 }
+//             }
+//         }
+//     }
+
+//     return won;
+// }
+
+// console.log(findprime(17));
 
 
 // -----------------------------------

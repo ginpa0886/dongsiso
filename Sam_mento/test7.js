@@ -1,17 +1,18 @@
-let parti = ["mislav", "stanko", "mislav", "ana"];
-let comple = ["stanko", "ana", "mislav"];
+let a = 5;
+let b = 24;
 
-function solution(parti, comple){
-    parti.sort();
-    comple.sort();
-    console.log(parti);
-    console.log(comple);
-    let answer = parti.filter((n,i) =>
-        !(n === comple[i])
-    )
-    console.log(answer);
 
-    return answer[0];
+function solution(a, b) {
+    const month = [31,29,31,30,31,30,31,31,30,31,30,31]
+    const week = [TUE,WED,THU,FRI,SAT,SUN,MON];
+    const year = [];
+    for(let i = 0; i < month.length; i++){
+        for(let h = 1; h <= month[i]; h++){
+            year.push(week[h % 7])
+        }
+    } 
+    
+    return answer;
 }
 
-console.log(solution(parti, comple));
+console.log(solution(a,b));
