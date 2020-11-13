@@ -3,15 +3,15 @@ let n = 45;
 function tenten(n){
     let answer = [];
     let num = 0;
-    for(let i =16; i >= 0; i--){
+    for(let i = 16; i >= 0; i--){
         if(i === 16){
             answer[i] = parseInt(n/Math.pow(3, i))*Math.pow(10, i);
-            num = n%Math.pow(3, i)
+            num = n % Math.pow(3, i)
             // console.log(answer);
             // console.log(num);
         }else {
             answer[i] += parseInt(num/Math.pow(3, i))*Math.pow(10, i);
-            num = num%Math.pow(3, i)
+            num = num % Math.pow(3, i)
         }
     }
 
