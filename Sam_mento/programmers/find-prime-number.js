@@ -1,22 +1,21 @@
 
 const n = 17;
 
-function happy(n){
-    let prime = [];
-    for(let i = 1; i <= n; i++){
-        let answer = [];
-        for(let h = 1; h <= i; h++){
-            if(i % h == 0){
-                answer.push(i);
-                console.log(answer);
-            }
-            if(answer.length > 2){
+function solution(n) {    
+  let prime = [2];
+    for(let i = 3; i <= n; i += 2){
+        let count = 0;
+        for(let h = 1; h < prime.length; h ++){
+            if(i % prime[h] == 0){
+                count++;
+                break;
+            }else if(i/h < prime[h]){
                 break;
             }
         }
-        if(answer.length === 2){
-            prime.push(answer[1]);
-        }
+        if(count === 0){
+          prime.push(i);
+        } 
     }
     return prime.length;
 }
