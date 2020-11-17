@@ -1,24 +1,52 @@
-let a = 5;
-let b = 24;
+// let dong = 12;
+// dong = dong.toString(5);
+// console.log(dong);
+
+let n = 10;
+
+function happy(n){
+  let num = [1, 2, 2];
+  
 
 
-function solution(a, b) {
-    const month = [31,29,31,30,31,30,31,31,30,31,30,31]
-    const week = ['FRI','SAT','SUN','MON','TUE','WED','THU'];
-    let year = [];
-    let num = 0;
-    let moon = 0;
-    for(let i = 0; i < month.length; i++){
-      let months = [];
-        for(let h = moon; h < month[i] + moon; h++){
-            months.push(week[h % 7]);
-            num = h % 7;
-        }
-        num++;
-        moon = num;
-        year.push(months);
-    } 
-    return year[a-1][b-1];
+
+
+
+  // let answer = 0;
+  // for(let i = 0; i <= n; i++){
+  //   if(i % 3 === 0){
+  //     answer += num[0];
+  //     answer = answer.toString()
+  //     for(let h = 0; h < answer.length; h++){
+  //       if(answer[h] === (5 || 6)){
+  //         answer = Number(answer);
+  //         answer = parseInt(answer.toString(5));
+  //       }
+  //     }
+
+  //     answer = Number(answer);
+  //   }else if(i % 3 === 1){
+  //     answer += num[1];
+  //     for(let h = 0; h < answer.length; h++){
+  //       if(answer[h] === (5 || 6)){
+  //         answer = Number(answer);
+  //         answer = parseInt(answer.toString(5));
+  //       }
+  //     }
+  //     answer = Number(answer);
+  //   }else if(i % 3 === 2){
+  //     answer += num[2];
+  //     for(let h = 0; h < answer.length; h++){
+  //       if(answer[h] === (5 || 6)){
+  //         answer = Number(answer);
+  //         answer = parseInt(answer.toString(5));
+  //       }
+  //     }
+  //     answer = Number(answer);
+  //   }
+  // }
+  // console.log(num[0]);
+  // return answer;
 }
 
-console.log(solution(a,b));
+console.log(happy(n));

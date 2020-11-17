@@ -1,26 +1,45 @@
 
-let s = "Pyy";
+const arr = [2, 2, 2, 3];
 
+function solution(arr) {
 
-const solution = (n,i) => s[i]
+  let answer = arr.sort((a,b) => a - b).reverse();
+  if(answer[answer.length - 1] === answer[answer.length - 2]){
+    console.log(`실행됨`);
+    answer = answer.filter(n => n !== answer[answer.length - 1]);
+  }else{
+    answer.pop();
+  }
+  
+  if(answer.length === 0){
+    answer.push(-1);
+  }
 
-
-
-// function solution(s){
-//   let count1 = 0;
-//   let count2 = 0;
-//   for(let i = 0; i < s.length; i++){
-//     if(s[i] === 'p' || s[i] === 'P'){
-//       count1++;
-//     }else if(s[i] === 'y' || s[i] === 'Y'){
-//       count2++;
-//     }
-//   }
-//   console.log(`${count1}과 ${count2}`);
-//   let answer = (count1 == count2) ? true : false;
-
-//   return answer;
+  return answer;
 }
 
 
-console.log(solution(s));
+
+
+
+function solution(arr){
+  let min = 0;
+  let dong = arr;
+  for(let i = 0; i < dong.length; i++){
+    for(let h = i; h < dong.length; h++){
+      if(dong[i] > dong[h]){
+        
+        min = dong[i];
+        dong[i] = dong[h];
+        dong[h] = min;
+      }
+    }
+  }
+  
+  // dong = dong.reverse();
+  // dong.pop();
+
+
+  return answer;
+}
+console.log(solution(arr));
