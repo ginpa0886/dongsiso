@@ -1,0 +1,181 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+li{
+  list-style-type: none;
+}
+
+.product-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Image */
+
+.product-image{
+  margin-right: 53px;
+}
+
+.product-image-big{
+  padding: 36px 13px;
+  margin-bottom: 16px;
+}
+
+.product-image-big img{
+  width: 514px;
+  height: auto;
+}
+
+.product-image-big{
+  display: block;
+  width: 514px;
+  height: auto;
+}
+
+.product-image-small{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-small img{
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+}
+
+.product-select{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* product Description */
+
+.product-desc h1{
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.333333333333333;
+  letter-spacing: -0.03em;
+  color: #1C1C1C;
+  margin-bottom: 12px;
+}
+
+.user-evaluation{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.how-many-star{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.unstar,
+.star{
+  width: 15px;
+  height: 15px;
+  background-image: url(./assets/icon-star-active.svg);
+}
+
+.star{
+  background-image: url(./assets/icon-star-active.svg);
+}
+
+.unstar{
+  background-image: url(./assets/icon-star-muted.svg)
+}
+
+.user-evaluation strong,
+.user-evaluation span{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.142857142857143;
+  letter-spacing: -0.02em;
+  color: #969696;
+}
+
+.user-evaluation span{
+  display: inline-block;
+  color: #969696;
+  margin-right: 19px;
+  
+}
+
+.user-evaluation strong{
+  color: #00B517;
+}
+
+.product-explain{
+  width: 500px;
+}
+
+.product-explain h2{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.333333333333333;
+  letter-spacing: -0.03em;
+  color: #1C1C1C;
+  margin-bottom: 24px;
+}
+
+.product-explain p{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.466666666666667;
+  letter-spacing: -0.015em;
+  color: #545454;
+  margin-bottom: 20px;
+}
+
+table{
+  border-collapse: collapse;
+  /* 이건 진짜.... 메모하자... */
+  /* 테이블에 원래 border가 없더라도 약간 띄어지게 있는데 그걸 없애주는 것 */
+  margin-bottom: 30px;
+}
+
+table tr:last-child,
+table tr:first-child{
+  background-color: #F7F7F7;
+
+}
+
+table td,
+table th{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.466666666666667;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+
+table td{
+  padding: 12px 0;
+  width: 100%;
+  height: 38px;
+  font-weight: 600;
+  color: #1C1C1C;
+}
+
+table th{
+  width: 86px;
+  padding: 12px 8px;
+  font-weight: 400;
+  color: #545454;
+}
+
