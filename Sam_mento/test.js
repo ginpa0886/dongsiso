@@ -1,27 +1,35 @@
 
 
-let answers = [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5];
+const s = "a y";
+const n = 5;
 
-function solution(answers) {
-    const answer = [];
-    const dong = [1, 2, 3, 4, 5];
-    const yeol = [2, 1, 2, 3, 2, 4, 2, 5];
-    const quokka = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
-
-    for(i = 0; i < answers.length; i++) {
-        if(dong.length > answers.length) {
-            break;
-        }
-        if(dong.length < answers.length) {
-            dong.push(dong[i]);
-            yeol.push(yeol[i]);
-            quokka.push(quokka[i]);
-        }
-    }
-
-    console.log(dong);
-    console.log(yeol);
-    console.log(quokka);
-     
+function happy(s, n){
+  const dong = s.split('');
+  const answer = [];
+  for(let i = 0; i < s.length; i++){
+    // if(dong[i].charCodeAt(0) >= 65 && dong[i].charCodeAt(0) <= 90){
+      if(dong[i].charCodeAt(0) + n > 90){
+        answer.push(String.fromCharCode(64 + dong[i].charCodeAt(0) + n - 90))
+      }
+      else if(dong[i].charCodeAt(0) + n > 122){
+        answer.push(String.fromCharCode(96 + dong[i].charCodeAt(0) + n - 122));
+      }
+      else if(dong[i].charCodeAt(0) === 32){
+        answer.push(dong[i]);
+      }else{
+        answer.push(String.fromCharCode(dong[i].charCodeAt(0) + n));
+      }
+  }    
+    // }else if(dong[i].charCodeAt(0) >= 97 && dong[i].charCodeAt(0) <= 122){
+    //   if(dong[i].charCodeAt(0) + n > 122){
+    //     answer.push(String.fromCharCode(96 + dong[i].charCodeAt(0) + n - 122));
+    //   }else{
+    //     answer.push(String.fromCharCode(dong[i].charCodeAt(0) + n));
+    //   }
+      
+    
+  
+  return answer.join('');
 }
-console.log(solution(answers));
+
+console.log(happy(s, n));
