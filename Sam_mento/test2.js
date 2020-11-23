@@ -1,5 +1,6 @@
 
 
-const dong = "A B"
+const dong = 'hi';
 
-console.log(dong.charCodeAt(1));
+dong.split('');
+console.log(dong);

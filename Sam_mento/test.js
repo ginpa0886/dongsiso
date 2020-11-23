@@ -20,6 +20,8 @@ function happy(s, n){
         answer.push(String.fromCharCode(dong[i].charCodeAt(0) + n));
       }
   }    
+
+  
     // }else if(dong[i].charCodeAt(0) >= 97 && dong[i].charCodeAt(0) <= 122){
     //   if(dong[i].charCodeAt(0) + n > 122){
     //     answer.push(String.fromCharCode(96 + dong[i].charCodeAt(0) + n - 122));
