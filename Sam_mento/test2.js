@@ -1,6 +1,6 @@
 
 
-const dong = 'hi';
-
-dong.split('');
-console.log(dong);
+const dong = document.createElement('tr');
+const won = [];
+won.push(dong);
+console.log(won);

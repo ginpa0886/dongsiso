@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+td,
+tr,
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table{
+  width: 200px;
+  height: 200px;
+}
+
