@@ -7,13 +7,23 @@ const result = document.querySelectorAll('.result-content span');
 // forEach문을 통해서 .operator-area button들에 addEventListener을 넣어줌
 button.forEach(v => {
   v.addEventListener('click', function(){
+    const check = result[0].textContent.split('');
+    const lastword = check[check.length - 1];
+
     if(result[0].textContent.length === 0 && v.textContent == 0){
       console.log('첫자리가 0 입니다');
       return;
     }
+
+    if(v.textContent == 0 && (lastword == '+' || lastword == '-' || lastword == '*' || lastword == '/')){
+      return;
+    }
+
     result[0].textContent += this.textContent;
   })
 })
+
+
 
 operatorButton.forEach(v => {
   v.addEventListener('click', function(){

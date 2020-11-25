@@ -7,7 +7,8 @@
 button{
   border: none;
   padding: 0;
-  border: solid rgb(223, 220, 220) 1px;
+  border: solid rgb(177, 177, 177) 1px;
+  background-color: rgb(146, 145, 145);
 }
 
 
@@ -28,61 +29,6 @@ button{
   margin-left: -15px;
 }
 
-.col-1{
-  width: 8.3333333333333335%;
-  padding: 0 15px;
-}
-
-.col-2{
-  width: 16.66666666666667%;
-  padding: 0 15px;
-}
-
-.col-3{
-  width: 25%;
-  padding: 0 15px;
-}
-
-.col-4{
-  width: 33.33333333333333%;
-  padding: 0 15px;
-}
-
-.col-5{
-  width: 41.66666666666667;
-  padding: 0 15px;
-}
-
-.col-6{
-  width: 50%;
-  padding: 0 15px;
-}
-
-.col-7{
-  width: 58.33333333333333%;
-  padding: 0 15px;
-}
-
-.col-8{
-  width: 66.66666666666667%;
-  padding: 0 15px;
-}
-
-.col-9{
-  width: 75%;
-  padding: 0 15px;
-}
-
-.col-10{
-  width: 83.33333333333333%;
-  padding: 0 15px;
-}
-
-.col-11{
-  width: 91.66666666666667%;
-  padding: 0 15px;
-}
-
 .col-12{
   width: 100%;
   padding: 0 15px;
@@ -95,7 +41,7 @@ button{
 } */
 
 .container h1{
-  background-color: pink;
+  background-color: rgb(163, 144, 147);
   text-align: center;
 }
 
@@ -104,8 +50,7 @@ section .form-area{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  max-height: 500px;
+  height: 300px;
 }
 
 section .result-area{
@@ -131,6 +76,10 @@ section .result-area .line{
   background-color: black;
 }
 
+.input-area{
+  background-color: rgb(71, 55, 55);
+}
+
 section .result-area strong{
   width: 100%;
 }
@@ -152,10 +101,10 @@ section .result-area strong{
 }
 
 .number-area{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center; */
   height: 100%;
 }
 

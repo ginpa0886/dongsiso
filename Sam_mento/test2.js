@@ -1,6 +1,6 @@
+const coinMap = [[1], [1, 1], [1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1, 1]];
 
+coinMap[0][0] = new Array();
+coinMap[0][0] = 3;
 
-const dong = document.createElement('tr');
-const won = [];
-won.push(dong);
-console.log(won);
+console.log(coinMap);
