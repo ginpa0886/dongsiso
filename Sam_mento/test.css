@@ -1,0 +1,8 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.number button:focus{
+  border: solid orange 1px;
+}

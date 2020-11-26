@@ -1,6 +1,6 @@
-const coinMap = [[1], [1, 1], [1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1, 1]];
 
-coinMap[0][0] = new Array();
-coinMap[0][0] = 3;
+const dong = document.querySelectorAll('.number .horn')[0];
 
-console.log(coinMap);
+dong.addEventListener('focus', function(){
+  console.log('focus 됐나?');
+})

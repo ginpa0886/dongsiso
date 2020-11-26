@@ -26,6 +26,10 @@ section{
   margin-right: 30px;
 }
 
+section:focus{
+  border: orange solid 1px;
+}
+
 section:last-child{
   margin-right: 0;
 }
@@ -73,4 +77,26 @@ section div:hover{
 .user-info button{
   background-color: white;
   border: none;
+}
+
+/* rule-description */
+
+.rule-desc{
+  position: absolute;
+  background-color: papayawhip;
+  top: 50px;
+  left: 50px;
+}
+
+.rule-desc strong{
+  margin-bottom: 10px;
+}
+
+.rule-desc p{
+  margin-bottom: 10px;
+}
+
+.rule-desc span{
+  font-weight: 300;
+  font-size: 10px;
 }
