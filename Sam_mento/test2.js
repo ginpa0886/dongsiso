@@ -1,6 +1,6 @@
 
-const dong = document.querySelectorAll('.number .horn')[0];
+const dong = [1,2,3,4];
 
-dong.addEventListener('focus', function(){
-  console.log('focus 됐나?');
-})
+let hi = dong.pop();
+
+console.log(hi);
