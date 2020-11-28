@@ -6,7 +6,7 @@ const operatorButton = document.querySelectorAll('.operator-area button')
 // 현재 적고 있는 곳
 const result = document.querySelectorAll('.result-content strong');
 
-//힉이 적히는 곳
+//식이 적히는 곳
 const resultMap = document.querySelectorAll('.result-content span')[0];
 
 const resultBody = document.querySelectorAll('.result-area')[0];
@@ -184,7 +184,9 @@ operatorButton.forEach(v => {
 })
   
 
-
+// 추가적으로 할 사항들은 계산기 중위표기식과 후위표기식 구현하기가 있음
+// 기본적으로 대중화 되어 있는 코드들이 있지만, 혼자 스스로 만들어 보는 것을 추천함
+// 
 
 
 

@@ -1,6 +1,7 @@
 
-const dong = [1,2,3,4];
+const dong = [1,2,3,4,5];
 
-let hi = dong.pop();
+const won = dong.slice(0, 2);
 
-console.log(hi);
+console.log(dong);
+console.log(won);
