@@ -1,5 +1,6 @@
 
 
-let dong = [1];
-dong = [];
-console.log(dong);
+const A = require('./test2');
+
+i = 25;
+console.log(A());
