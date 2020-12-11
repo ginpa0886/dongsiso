@@ -1,0 +1,17 @@
+{
+  "name": "test-dong",
+  "version": "0.0.1",
+  "description": "test the sever",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "dongwon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

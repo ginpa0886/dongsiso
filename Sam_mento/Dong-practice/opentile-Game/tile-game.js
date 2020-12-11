@@ -105,7 +105,7 @@ selectButton.addEventListener('click', function() {
 })
 
 
-  // 상대 숫자가 보이지 않게 페이지 가려주는 함수
+  // 카운트 해서 페이지 넘어가게 해주는 것
   function countAndMakehold(){
     if(test === 1){
       console.log('실행됨');
@@ -141,6 +141,7 @@ selectButton.addEventListener('click', function() {
           fightOther[0]++;
           if(fightOther[0] === 1 && fightOther[1] === 1){
             fightNumber();
+            return 0;
           }
       
           const someThing = document.createElement('div');
@@ -166,6 +167,7 @@ selectButton.addEventListener('click', function() {
           fightOther[1]++;
           if(fightOther[0] === 1 && fightOther[1] === 1){
             fightNumber();
+            return 0;
           }
       
           const someThing = document.createElement('div');
@@ -224,6 +226,7 @@ selectButton.addEventListener('click', function() {
     // 다음 게임이 시작되려고 할때 누를 버튼의 이벤트 리스너 관리
     endButton.addEventListener('click', function(){
       timecheck++;
+      who *= -1;
       if(timecheck === 1){
         let a = 5;
         setTimeout(() => {
@@ -238,6 +241,9 @@ selectButton.addEventListener('click', function() {
             }
             a--
           }, 1000);
+          if(who === -1){
+            
+          }
         }, 1000);
 
       }

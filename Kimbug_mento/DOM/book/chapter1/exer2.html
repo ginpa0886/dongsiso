@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="#">Hi</a>
+  <script>
+
+    var nodeAnchor = document.querySelectorAll('a');
+    var props = [];
+
+    for(var key in nodeAnchor){
+      props.push(key);
+    }
+
+    console.log(props.sort());
+  </script>
+</body>
+</html>
