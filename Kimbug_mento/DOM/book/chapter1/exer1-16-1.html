@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <ul>
+    <!-- commnet -->
+    <li id="A"></li>
+    <li id="B"></li>
+    <!-- commnet -->
+  </ul>
+  
+  <script>
+    const ul = document.querySelector('ul');
+
+    console.log(ul.parentNode.nodeName);
+    console.log(ul.firstChild.nodeName);
+    console.log(ul.lastChild.nodeName);
+
+    console.log(ul.querySelector('#A').nextSibling.nodeName);
+    console.log(ul.querySelector('#B').previousSibling.nodeName);
+  </script>
+</body>
+</html>

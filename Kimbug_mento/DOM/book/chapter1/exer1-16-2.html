@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  
+  <ul>
+    <!-- comment -->
+    <li id="A">foo</li>
+    <li id="B">bar</li>
+    <!-- comment -->
+  </ul>
+
+  <script>
+
+    const ul = document.querySelector('ul');
+
+    console.log(ul.firstElementChild.nodeName);
+    console.log(ul.lastElementChild.nodeName);
+
+    console.log(ul.querySelector('#A').nextElementSibling.nodeName);
+    console.log(ul.querySelector('#B').previousElementSibling.nodeName);
+
+    console.log(ul.children);
+    console.log(ul.firstElementChild.parentElement);
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  
+  <div id="A">Hi</div>
+  <div id="B">Dude</div>
+
+
+  <script>
+
+    const divA = document.getElementById('A');
+    const newSpan = document.createElement('span');
+    newSpan.textContent = 'Howdy';
+    divA.parentNode.replaceChild(newSpan, divA);
+
+    const divB = document.getElementById('B');
+    const newText= document.createTextNode('buddy');
+    divB.parentNode.replaceChild(newText, divB);
+
+    console.log(document.body.innerHTML);
+
+  </script>
+</body>
+</html>
