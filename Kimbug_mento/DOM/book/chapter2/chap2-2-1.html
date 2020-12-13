@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <script>
+    console.log(Object.keys(document).sort());
+
+    const documentPropertiesIncludeInherited = [];
+    for(let p in document){
+      documentPropertiesIncludeInherited.push(p);
+    }
+
+    console.log(documentPropertiesIncludeInherited.sort());
+
+    const documentPropertiesOnlyInherited = [];
+    for(let p in document){
+      documentPropertiesOnlyInherited.push(p);
+    }
+    console.log(documentPropertiesOnlyInherited.sort());
+  </script>
+</body>
+</html>
