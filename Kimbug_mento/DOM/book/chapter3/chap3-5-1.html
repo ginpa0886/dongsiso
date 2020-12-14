@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="#" title="title" data-foo="dataF00" class="yes" style="margin:0;" foo="boo"></a>
+  <script>
+    
+    const atts = document.querySelector('a').attributes;
+
+    for(let i = 0; i < atts.length; i++){
+      console.log(atts[i].nodeName +'='+ atts[i].nodeValue);
+    }
+  </script>
+</body>
+</html>

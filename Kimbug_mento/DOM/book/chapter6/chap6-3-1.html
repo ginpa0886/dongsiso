@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div');
+    const divStyle = div.style;
+
+    divStyle.cssText = 'background-color:red;border:1px solid black;height:100px;width:100px;';
+
+    console.log(divStyle.cssText);
+    divStyle.cssText = '';
+
+    div.setAttribute('style','background-color:red;border:1px solid black;height:100px;width:100px;');
+    console.log(div.getAttribute('style'));
+    div.removeAttribute('style');
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="#" title="title" data-foo="dataF00" class="yes" style="margin:0;" foo="boo" hidden="hidden">#link</a>
+
+  <script>
+    const atts = document.querySelector('a');
+    console.log(
+      atts.hasAttribute('href'),
+      atts.hasAttribute('title'),
+      atts.hasAttribute('style'),
+      atts.hasAttribute('data-foo'),
+      atts.hasAttribute('class'),
+      atts.hasAttribute('foo'),
+      atts.hasAttribute('hidden')
+    );
+    
+  </script>
+</body>
+</html>

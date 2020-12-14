@@ -3,18 +3,30 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+const indexRouter = require('./routes/index');
+const userRouter = require('./routes/user');
+
+const { getuid } = require('process');
+const { readFile } = require('fs');
 app.set('port', process.env.PORT || 3000);
 
 app.use((req, res, next) => {
-  console.log('모든 요청에 다 실행됩니다.');
   next();
 });
 app.get('/', (req, res, next) => {
-  console.log('GET / 요청에서만 실행됩니다.');
-  next();
-}, (req, res) => {
-  throw new Error('에러는 에러 처리 미들웨어로 갑니다.');
+  res.send('무엇이 문제냐');
 });
+
+// (req, res) => {
+//   throw new Error('에러는 에러 처리 미들웨어로 갑니다.');
+// });
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+app.use('/index', indexRouter);
+app.use('/user', userRouter);
+// app.use('/user/:id', getUser);
 
 app.use('/dong', express.static(path.join(__dirname, 'public')))
 
@@ -23,9 +35,40 @@ app.get('/dong',(req, res, next) => {
   res.sendFile(path.join(__dirname, 'public/calculator.html'));
 });
 
+
+
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send(err.message);
+});
+
+app.get('/user/:id', (req, res) =>{
+  readFile(path.join(__dirname, 'routes/test.json'), function(err, data){
+    console.log(data.toString());
+  });
+  console.log(req.body);
+  res.send(req.body);
+});
+ 
+
+
+app.get('/user/:id', (req, res) =>{
+  readFile(path.join(__dirname, 'routes/test.json'), function(err, data) {
+    const hold = JSON.parse(data);
+    const { id } = hold;
+    const result = [];
+
+    for(let i = 0; i < id.length; i++){
+      if(id[i].id == req.params.id){
+        result.push(id[i]);
+        break;
+      }
+    }
+    if(result.length === 0){
+      result.push('값이 없습니다.');
+    }
+    res.send(result[0]);
+  });
 });
 
 app.listen(app.get('port'), () => {

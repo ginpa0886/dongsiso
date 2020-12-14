@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      div{
+        background: red;
+        border: 1px solid black;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+<body>
+  <div style="background-color: green;border: 1px solid purple;"></div>
+  <script>
+    const div = document.querySelector('div');
+
+    console.log(window.getComputedStyle(div).backgroundColor);
+    console.log(window.getComputedStyle(div).border);
+    console.log(window.getComputedStyle(div).width);
+    console.log(window.getComputedStyle(div).height);
+  </script>
+</body>
+</html>

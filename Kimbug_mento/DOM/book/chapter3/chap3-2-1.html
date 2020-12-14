@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="#">Hi</a>
+  <script>
+    
+    const anchor = document.querySelector('a');
+    console.log(Object.keys(anchor).sort());
+
+    const documentPropertiesIncludeInherited = [];
+    for(let p in document){
+      documentPropertiesIncludeInherited.push(p);
+    }
+    console.log(documentPropertiesIncludeInherited.sort());
+
+    const documentPropertiesOnlyInherited = [];
+    for(let p in document){
+      documentPropertiesOnlyInherited.push(p);
+    }
+
+    console.log(documentPropertiesOnlyInherited.sort());
+
+  </script>
+</body>
+</html>

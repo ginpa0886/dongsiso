@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div data-foo="foo" dat-bar-bar="bar"></div>
+
+  <script>
+    const elm = document.querySelector('div');
+
+    console.log(elm.dataset.foofoo);
+    console.log(elm.dataset.barbar);
+
+    elm.dataset.gooGoo = 'goo';
+    console.log(elm.dataset);
+    console.log(elm);
+  </script>
+</body>
+</html>

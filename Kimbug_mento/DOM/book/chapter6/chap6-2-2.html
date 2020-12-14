@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    </style>
+  </head>
+<body>
+  <div style="background-color: green;border: 1px solid purple;"></div>
+
+  <script>
+    const divStyle = document.querySelector('div').style;
+
+    divStyle.setProperty('background-color', 'red');
+    divStyle.setProperty('border', '1px solid black');
+    divStyle.setProperty('width', '100px');
+    divStyle.setProperty('height', '100px');
+
+    console.log(divStyle.getPropertyValue('background-color'));
+    console.log(divStyle.getPropertyValue('border'));
+    console.log(divStyle.getPropertyValue('width'));
+    console.log(divStyle.getPropertyValue('height'));
+
+    // 제거는 removeProperty('background-color')이런식으로 하면됨.
+
+  </script>
+</body>
+</html>

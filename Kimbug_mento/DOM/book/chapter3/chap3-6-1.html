@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="#" title="title" data-foo="dataF00" class="yes" style="margin:0;" foo="boo" hidden="hidden">#link</a>
+
+  <script>
+    const atts = document.querySelector('a');
+    atts.removeAttribute('href');
+    atts.removeAttribute('title');
+    atts.removeAttribute('style');
+    atts.removeAttribute('data-foo');
+    atts.removeAttribute('class');
+    atts.removeAttribute('foo');
+    atts.removeAttribute('hidden');
+    
+    atts.setAttribute('href', '#');
+    atts.setAttribute('title', 'title');
+    atts.setAttribute('style', 'margin:0;');
+    atts.setAttribute('data-foo', 'dataF00');
+    atts.setAttribute('class', 'yes');
+    atts.setAttribute('foo', 'boo');
+    atts.setAttribute('hidden', 'hidden');
+
+    console.log(atts.getAttribute('href'));
+    console.log(atts.getAttribute('title'));
+    console.log(atts.getAttribute('style'));
+    console.log(atts.getAttribute('data-foo'));
+    console.log(atts.getAttribute('class'));
+    console.log(atts.getAttribute('foo'));
+    console.log(atts.getAttribute('hidden'));
+  </script>
+</body>
+</html>
