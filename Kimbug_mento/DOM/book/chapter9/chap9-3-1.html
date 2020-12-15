@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style id="styleElement">
+    body{
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const styleSheet = document.querySelector('#styleElement').sheet;
+
+    console.log(Object.keys(styleSheet).sort());
+    const styleSheetPropertiesIncludeInherited = [];
+    for(let p in styleSheet){
+      styleSheetPropertiesIncludeInherited.push(p);
+    }
+    console.log(styleSheetPropertiesIncludeInherited.sort());
+
+    const styleSheetPropertiesOnlyInherited = [];
+    for(let p in styleSheet){
+      if(!styleSheet.hasOwnProperty(p)){
+        styleSheetPropertiesOnlyInherited.push(p);
+      }
+    }
+    console.log(styleSheetPropertiesOnlyInherited.sort());
+  </script>
+</body>
+</html>

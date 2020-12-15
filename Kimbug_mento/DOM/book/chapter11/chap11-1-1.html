@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 인라인 attribute 이벤트 핸들러 패턴 -->
+<body onclick="console.log('fire/trigger attribute event hadler')">
+  <div>click me</div>
+  <script>
+    const elementDiv = document.querySelector('div');
+
+    elementDiv.onclick = function(){
+      console.log('fire/trigger property event handler')
+    };
+
+    elementDiv.addEventListener('click', function(){
+      console.log('fire/trigger addEventListener')}, false);
+    
+  </script>
+  
+</body>
+</html>

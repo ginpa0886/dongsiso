@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me</div>
+  <script>
+    const elementDiv = document.querySelector('div');
+
+    //속성 이벤트 핸들러
+    elementDiv.onclick = function(){
+      console.log('I\'m first, but I get overridden/replaced');
+    }
+
+    //이전 값을 재정의/교체
+    elementDiv.onclick = function(){
+      console.log('I win');
+    }
+  </script>
+</body>
+</html>

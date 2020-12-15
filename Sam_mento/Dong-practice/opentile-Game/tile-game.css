@@ -107,7 +107,29 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+}
+
+.whose-turn{
+  position: relative;
+}
+
+.player1-point,
+.player2-point{
+  position: absolute;
+  text-align: center;
+}
+
+.player1-point{
+  left: -100px;
+}
+
+.player1-point strong:first-child,
+.player2-point strong:first-child{
+  display: block;
+}
+
+.player2-point{
+  right: -100px;
 }
 
 
