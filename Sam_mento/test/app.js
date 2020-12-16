@@ -14,6 +14,9 @@ app.use((req, res, next) => {
   next();
 });
 app.get('/', (req, res, next) => {
+
+  // 서버에는 항상 req와 res 값이 있어야 한다.
+  // 아무 의미 없는 값이라도 보내주어야 서버가 정상적이게 작동한다.
   res.send('무엇이 문제냐');
 });
 
@@ -28,10 +31,9 @@ app.use('/index', indexRouter);
 app.use('/user', userRouter);
 // app.use('/user/:id', getUser);
 
-app.use('/dong', express.static(path.join(__dirname, 'public')))
+app.use('/dong', express.static(path.join(__dirname, 'public')));
 
-app.get('/dong',(req, res, next) => {
-
+app.get('/dong',(req, res) => {
   res.sendFile(path.join(__dirname, 'public/calculator.html'));
 });
 

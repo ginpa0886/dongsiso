@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me to start event flow</div>
+
+  <script>
+    // 1 캡쳐 단계
+    window.addEventListener('click', function(){
+      console.log(1);
+    }, true);
+
+    // 2 캡쳐 단계
+    document.addEventListener('click', function(){
+      console.log(2);
+    }, true);
+
+    // 3 캡쳐 단계
+    document.documentElement.addEventListener('click', function(){
+      console.log(3);
+    }, true)
+
+    // 4 캡쳐 단계
+    document.body.addEventListener('click', function(){
+      console.log(4);
+    }, true);
+
+    // 5 캡쳐 단계 도중에 대상 단계가 발생
+    document.querySelector('div').addEventListener('click', function(){
+      console.log(5);
+    }, true);
+
+    // 6 버블링 단계 도중에 대상 단계가 발생
+    document.querySelector('div').addEventListener('click', function(){
+      console.log(6);
+    }, false);
+
+    // 7 버블링 단계
+    document.body.addEventListener('click', function(){
+      console.log(7);
+    }, false);
+
+    // 8 버블링 단계
+    document.documentElement.addEventListener('click', function(){
+      console.log(8);
+    }, false);
+
+    // 9 버블링 단계
+    document.addEventListener('click', function(){
+      console.log(9);
+    }, false);
+
+    // 10 버블링 단계
+    window.addEventListener('click', function(){
+      console.log(10);
+    }, false);
+
+  </script>
+</body>
+</html>

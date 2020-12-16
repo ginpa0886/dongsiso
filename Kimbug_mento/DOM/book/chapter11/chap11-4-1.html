@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>mouse over me</div>
+
+  <script>
+    // 버블링 단계에서 이벤트가 호출되도록 window 개체에 mousemove 이벤트를 추가한다.
+    window.addEventListener('mousemove', function(){
+      console.log('moving over window');
+    }, false);
+
+    // 버블링 단계에서 이벤트가 호출되도록 document 개체에 mouseomove 이벤트를 추가한다.
+    document.addEventListener('mouseover',function(){
+      console.log('moving over document');
+    },false);
+
+    // 버블링 단계에서 이벤트가 호출되도록 <div> element 개체에 mousemove 이벤트를 추가한다.
+    document.querySelector('div').addEventListener('mouseover', function(){
+      console.log('moving over div');
+    }, false);
+  </script>
+</body>
+</html>

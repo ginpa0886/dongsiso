@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me</div>
+  <script>
+    document.body.addEventListener('click', function(event){
+      console.log(event.currentTarget);
+      console.log(this);
+    }, false);
+
+    document.addEventListener('click', function(event){
+      console.log(event.currentTarget);
+      console.log(this);
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(event){
+      console.log(event.currentTarget);
+      console.log(this);
+    }, false);
+  </script>
+</body>
+</html>

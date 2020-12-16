@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 const readFileContent = util.promisify(fs.readFile)
+
 async function fetchOrderbookData() {
   const filename = `orderbook.json`
   const filePath = path.join(__dirname, 'public', filename)

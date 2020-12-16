@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me to start event flow</div>
+
+  <script>
+
+    // 1 버블링 단계 도중에 대상 단계가 발생
+    document.querySelector('div').addEventListener('click', function(){
+      console.log(1);
+    }, false);
+
+    // 2 버블링 단계
+    document.body.addEventListener('click', function(){
+      console.log(2);
+    }, false);
+
+    // 3 버블링 단계
+    document.documentElement.addEventListener('click', function(){
+      console.log(3);
+    }, false);
+
+    // 4 버블링 단계
+    document.addEventListener('click', function(){
+      console.log(4);
+    }, false);
+
+    // 5 버블링 단계
+    window.addEventListener('click', function(){
+      console.log(5);
+    }, false);
+
+  </script>
+</body>
+</html>
