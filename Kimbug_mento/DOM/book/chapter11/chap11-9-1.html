@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <a href="goole.com">no go</a>
+  <input type="checkbox" />
+  <textarea></textarea>
+
+  <script>
+    document.querySelector('a').addEventListener('click', function(event){
+      event.preventDefault(); // url을 로드하는 <a>의 기본 이벤트를 중지 시킴.
+    }, false);
+
+    document.querySelector('input').addEventListener('click', function(event){
+      event.preventDefault(); // 체크박스 상태를 전환하는 체크박스의 기본 이벤트를 중지시킴.
+    }, false);
+
+    document.querySelector('textarea').addEventListener('click', function(event){
+      event.preventDefault(); // 입력한 문자를 추가하는 textarea의 기본 이벤트를 중지시킴.
+    }, false);
+
+    // 이 html 문서 내에서 링크를 클릭하면, 기본 이벤트는 중지되었지만, 이벤트 버블링은 중지 되지 않았으므로, 
+    // 이벤트가 여전히 전파된다는 것에 유의한다.
+    document.body.addEventListener('click', function(){
+      console.log('the event flow still flows!');
+    }, false);
+  </script>
+</body>
+</html>

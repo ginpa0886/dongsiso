@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me</div>
+  <script>
+    const divElement = document.querySelector('div');
+    // 사용자 정의 이벤트 생성
+    // CustomEvent 매개변수가 필요함.
+    const cheer = document.createEvent('CustomEvent');
+
+    // 사용자 정의 이벤트에 대한 이벤트 수신기 생성
+    divElement.addEventListener('goBigBlue', function(event){
+      console.log(event.detail.goBigBlueIs);
+    }, false);
+
+    // initCustomEvent 메서드를 사용하여 사용자 정의 이벤트를 상세하게 설정한다.
+    // initCustomEvent의 매개변수는 event, bubble?, cancelable?, event.detail로 전달될 값이다.
+    cheer.initCustomEvent('goBigBule', true, false, {goBigBlueIs:'its gone!'});
+
+    // dispatchEvent를 사용하여 사용자 정의 이벤트를 호출.
+    divElement.dispatchEvent(cheer);
+  </script>
+</body>
+</html>

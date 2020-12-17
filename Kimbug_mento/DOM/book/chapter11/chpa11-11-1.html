@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me</div>
+
+  <script>
+    // 첫 번째 이벤트 연결
+    document.querySelector('div').addEventListener('click', function(){
+      console.log('I get invoked because I was attached first');
+    }, false);
+
+    // 두 번째 이벤트 연결
+    document.querySelector('div').addEventListener('click', function(event){
+      console.log('I get invoked, but stop any other click events on this target');
+    }, false);
+
+    // 세 번째 이벤트가 연결되나, 앞에서 stopImmediatePropagation()에 호출되어 이벤트가 발생되지 않는다.
+    document.querySelector('div').addEventListener('click', function(){
+      console.log('I get stopped from the previous click event listener');
+    }, false);
+
+    // stopPropagation이 호출된 것처럼 이벤트 흐름 역시 취소된다.
+    document.body.addEventListener('click', function(){
+      console.log('What, denied from being invoked!');
+    }, false);
+  </script>
+</body>
+</html>

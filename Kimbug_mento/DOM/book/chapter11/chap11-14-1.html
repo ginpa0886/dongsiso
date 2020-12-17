@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <p>Click a talbe cell</p>
+
+  <table border="1">
+    <tbody>
+      <tr><td>row 1 column 1</td><td>row 1 column 2</td></tr>
+      <tr><td>row 2 column 1</td><td>row 2 column 2</td></tr>
+      <tr><td>row 3 column 1</td><td>row 3 column 2</td></tr>
+      <tr><td>row 4 column 1</td><td>row 4 column 2</td></tr>
+      <tr><td>row 5 column 1</td><td>row 5 column 2</td></tr>
+      <tr><td>row 6 column 1</td><td>row 6 column 2</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.querySelector('table').addEventListener('click', function(event){
+      // 대상이 td인 경우에만 코드를 실행한다.
+      if(event.target.tagName.toLowerCase() === 'td'){
+        // event.target을 사용하여 이벤트 대상(td)에 대해 접근을 얻는다.
+        console.log(event.target.textContent);
+      }
+    }, false);
+  </script>
+</body>
+</html>

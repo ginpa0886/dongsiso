@@ -9,17 +9,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use((req, res, next) => {
+app.use('/', (req, res, next) => {
   next();
 });
-app.get('/:id', (req, res) => {
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app.use('/test',(req, res) => {
+  console.log('test 실행됨');
+  res.sendFile(path.join(__dirname, 'public/test.html'));
+});
+
+app.get('/user/:id', (req, res) => {
+  // const result = 
   console.log(req.originalUrl); // /:id
   console.log(req.params.id); // :id
   console.log(req.method); // GET
   // res.sendFile(path.join(__dirname,'public', '/want.json'), function(data){
   // });
 
-  
+
   
   // res.send('아니면 이건가?');
 });

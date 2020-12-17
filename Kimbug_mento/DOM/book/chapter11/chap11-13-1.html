@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>no need to click, we programmatically trigger it</div>
+  <script>
+    const divElement = document.querySelector('div');
+
+    divElement.addEventListener('click', function(event){
+      console.log((Object.keys(event)));
+    }, false);
+
+    const simulateDivClick = document.createEvent('MouseEvents');
+
+    // 시뮬레이션된 마우스 'click'을 구성
+    // iitMouseEvent(type, bubbles,cancelable,view,detail,screenx,screeny,clientx,clienty,ctrlKey,altKey,shiftKey,metaKey,button,relatedTarget)
+    simulateDivClick.initMouseEvent('click', true, true,document.defaultView,0,0,0,0,0,false,false,false,0,null,null);
+
+    // 시뮬레이션된 click 이벤트 발생
+    divElement.dispatchEvent(simulateDivClick);
+  </script>
+</body>
+</html>

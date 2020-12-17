@@ -13,7 +13,7 @@
     // 함수 참조를 사용하여 이벤트 수신기를 추가
     document.querySelector('div').addEventListener('click', sayHi, false);
 
-    // 이벤트 수신기를 둘 다 제거하려고 시도하나, 함수 참조로 추가된 수시기만 제거됨.
+    // 이벤트 수신기를 둘 다 제거하려고 시도하나, 함수 참조로 추가된 수신기만 제거됨.
     document.querySelector('div').removeEventListener('click', sayHi, false);
 
     // reomveEventListener로 전달된 함수는 완전히 새로운 다른 함수이므로, 아래 코드는 제대로 작동하지 않음.

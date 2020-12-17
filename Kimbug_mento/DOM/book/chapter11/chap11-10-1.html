@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div>click me</div>
+  <script>
+    document.querySelector('div').addEventListener('click', function(){
+      console.log('me too, but nothing from the event flow!-1');
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(event){
+      console.log('invoked all click events attached, but cancel capture and bublle event phases');
+      event.stopPropagation();
+    }, false);
+
+    document.querySelector('div').addEventListener('click', function(){
+      console.log('me too, but nothing from the event flow!-2');
+    }, false);
+
+    // div가 클릭되어도 div에 연결된 이벤트에서 캡쳐 및 버블 흐름을 중지 시켰기에,
+    // 아래 이벤트가 호출되지 않는다.
+    document.body.addEventListener('click', function(){
+      console.log('What, denied from being invoked!');
+    }, false);
+  </script>
+</body>
+</html>
