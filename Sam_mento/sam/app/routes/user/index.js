@@ -1,10 +1,15 @@
+const express = require('express');
 const {Router} = require('express')
 const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 
+
 const userModel = require('./user');
-const app = require('../..');
+const { urlencoded } = require('body-parser');
+const { nextTick } = require('process');
+const app = express();
+
 
 const router = Router()
 
@@ -17,36 +22,45 @@ let USER_DATA = [
   new userModel('gold', '1111', '아무개6', 'enable', new Date(), new Date())
 ]
 
-// uploads라는 폴더를 일단 만든다.
-try{
-  fs.readFileSync('uploads')
-}catch(error){
-  console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
-  fs.mkdirSync('uploads');
-}
+// // uploads라는 폴더를 일단 만든다.
+// try{
+//   fs.readFileSync('uploads')
+// }catch(error){
+//   console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
+//   fs.mkdirSync('uploads');
+// }
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, 'uploads/');
-    },
-    filename(req, file, done) {
-      const ext = path.extname(file.originalname);
-      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
-    }
-  })
-});
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination(req, file, done) {
+//       done(null, 'uploads/');
+//     },
+//     filename(req, file, done) {
+//       const ext = path.extname(file.originalname);
+//       done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+//     }
+//   })
+// });
+
+// router.use(express.json());
+// router.use(express.urlencoded({ extended: false }));
 
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'))
 });
-router.post('/', upload.fields([{ name: 'name1'}, {name: 'name2'}]), (req, res) =>{
-  console.log(req.files, req.body);
-  res.send('ok');
+router.post('/', (req, res, next) => {
+  
+  console.log(22222, req.params);
+  console.log(33333, req.query);
+  console.log(44444, req.body);
+  
+  next('route');
+  console.log('????');
 });
 
 // 유저 목록을 조회 API
 router.get('/', (req, res) => {
+  console.log('실행되나요?');
   const page = req.query.page === undefined ? 1 : +req.query.page
   const pageSize = req.query.pageSize === undefined ? 2 : +req.query.pageSize
   const name = req.query.name
