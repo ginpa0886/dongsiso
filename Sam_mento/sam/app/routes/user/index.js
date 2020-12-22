@@ -22,43 +22,46 @@ let USER_DATA = [
   new userModel('gold', '1111', '아무개6', 'enable', new Date(), new Date())
 ]
 
-// // uploads라는 폴더를 일단 만든다.
-// try{
-//   fs.readFileSync('uploads')
-// }catch(error){
-//   console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
-//   fs.mkdirSync('uploads');
-// }
 
-// const upload = multer({
-//   storage: multer.diskStorage({
-//     destination(req, file, done) {
-//       done(null, 'uploads/');
-//     },
-//     filename(req, file, done) {
-//       const ext = path.extname(file.originalname);
-//       done(null, path.basename(file.originalname, ext) + Date.now() + ext);
-//     }
-//   })
-// });
+// 유저 생성 API
+router.route('/')
+  .get((req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
+  })
+  .post((req, res, next) => {
+    // console.log('post 실행됨');
+    // console.log(22222, req.params); // 값 없음
+    // console.log(33333, req.query); // 값 없음
+    const { id, pw, name, enable } = req.body;
+    
 
-// router.use(express.json());
-// router.use(express.urlencoded({ extended: false }));
+    if(id === undefined){
+      res.status(400).json({err: 'id를 입력하지 않았습니다.'});
+    }
+    if(pw === undefined){
+      res.status(400).json({err: 'pw를 입력하지 않았습니다.'});
+    }
+    if(name === undefined){
+      res.status(400).json({err: 'name를 입력하지 않았습니다.'});
+    }
+    if(enable === undefined){
+      res.status(400).json({err: 'enable를 입력하지 않았습니다.'});
+    }
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
-});
-router.post('/', (req, res, next) => {
-  
-  console.log(22222, req.params);
-  console.log(33333, req.query);
-  console.log(44444, req.body);
-  
-  next('route');
-  console.log('????');
-});
+    // 검사 후에 데이터베이스에 값을 입력함
+    USER_DATA.push({ id, pw, name, enable });
 
-// 유저 목록을 조회 API
+    // console.log(id,pw,name,enable);
+    // console.log(44444, req.body);
+
+    // 데이터 저장 시키는 함수 실행
+    
+
+    res.send(`등록되었습니다. ${req.body.id}님`);
+    
+  })
+
+// 유저 목록을 조회 APIs
 router.get('/', (req, res) => {
   console.log('실행되나요?');
   const page = req.query.page === undefined ? 1 : +req.query.page
@@ -112,19 +115,31 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// 유저 생성 API
-router.post('/', (req, res) => {
-
-})
 
 // 유저 수정 API
 router.patch('/:id', (req, res) => {
-
+  const { id, pw, name, enable } = req.params;
+  const idNum = USER_DATA.indexOf(id);
+  if(!idNum){
+    return res.status(400).json({err});
+  }
+  USER_DATA[idNum] = {
+    id: id,
+    pw: pw,
+    name: name,
+    enable: enable
+  }
 })
 
 // 유저 삭제 API
 router.delete('/:id', (req, res) => {
-
+  const { id } = req.params;
+  const idNum = USER_DATA.indexOf(id);
+  if(!idNum){
+    return res.status(400).json({err});
+  }
+  USER_DATA.splice(idNum, 1);
+  res.send('id가 제거 되었습니다.')
 })
 
 module.exports = router
