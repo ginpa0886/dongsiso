@@ -62,7 +62,7 @@ router.route('/')
   })
 
 // 유저 목록을 조회 APIs
-router.get('/', (req, res) => {
+router.get('/list', (req, res) => {
   console.log('실행되나요?');
   const page = req.query.page === undefined ? 1 : +req.query.page
   const pageSize = req.query.pageSize === undefined ? 2 : +req.query.pageSize
@@ -129,6 +129,7 @@ router.patch('/:id', (req, res) => {
     name: name,
     enable: enable
   }
+  res.send(`요청하신대로 정보가 수정되었습니다. ${id}님`);
 })
 
 // 유저 삭제 API
