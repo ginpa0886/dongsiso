@@ -6,7 +6,7 @@ const enemyBackground = document.querySelector('.background-enemy');
 // enemy class에 붙는 번호로, 적의 개수를 파악하기 위해 만든 변수
 let enemyCount = 0;
 let enemyRemoveCount = 0;
-let enemyMovingCount = 0;
+// let enemyMovingCount = -1;
 
 // 랜덤 위치를 만들기 위해서 width와 height의 비율을 정리한 변수
 // const widthRate = Number(body.offsetWidth); // 가로의 100% 값
@@ -27,10 +27,10 @@ let movingTerm = 1000;
 
 // ------ 적 생성 시킬 횟수, 생성 되는 시간 ------------------
 // 적 개수
-let howManyEnemy = 50;
+let howManyEnemy = 5;
 
 // 생성 시간
-const createTime = 200;
+const createTime = 1000;
 // ---------------------------------------------------------
 
 // 1초마다 적을 생성시키는 함수
@@ -64,7 +64,8 @@ function setLotation(num){
 // 적을 만드는 함수 + character에게 날라가는 기능
 function creatEnemy(){
   const createRandomLocation = parseInt(Math.random()*10);
-  const createlotation = parseInt(Math.random()*4) + 1;
+  const createlotation = 1;
+  // parseInt(Math.random()*4) + 1;
 
   const enemyHead = setLotation(createlotation);
 
@@ -99,9 +100,11 @@ function creatEnemy(){
     enemy.style.left = `${widthRate}px`;
   }
 
+  const enemyMovingCount = enemyCount - 1;
   // 반대편으로 움직이게 함수 실행
   setTimeout(() => {
-    attackCharacter(locationWidth, locationHeight, enemyHead, enemy);
+    
+    attackCharacter(locationWidth, locationHeight, enemyHead, enemy, enemyMovingCount);
   }, 1000);
   
   return 0;
@@ -109,8 +112,9 @@ function creatEnemy(){
 }
 
 // 적이 character에게 날라가도록 하는 함수
-function attackCharacter(locationWidth, locationHeight, enemyHead, enemy){
+function attackCharacter(locationWidth, locationHeight, enemyHead, enemy, enemyMovingCount){
   // 확인 완료
+  const enemyMovingCount1 = enemyMovingCount;
   // 인자들에 변수를 내부 스코프로 전환
   const enemy1 = enemy;
   const locationWidth1 = locationWidth;
@@ -168,9 +172,30 @@ function attackCharacter(locationWidth, locationHeight, enemyHead, enemy){
     if(enemyEnd >= widthRate){
       enemyEnd = widthRate;
     }
+    let ma = 40;
 
-    enemy1.style.top = `${heightRate - enemySize}px`;
-    enemy1.style.left = `${enemyEnd - enemySize}px`;
+    let enemyTop = enemyHeight;
+    let enemyLeft = enemyWidth;
+
+    const yam = setInterval(() => {
+      
+
+      const movingEnemy = document.querySelector(`.count${enemyMovingCount1}`)
+      enemyTop += (heightRate - enemySize) / 40;
+      enemyLeft += (enemyEnd - enemySize) / 40;
+
+      movingEnemy.style.top = `${enemyTop}px`;
+      movingEnemy.style.left = `${enemyLeft}px`
+
+      ma--;
+      if(ma === 0){
+        clearInterval(yam);
+      }
+    }, 100);
+
+    
+    // enemy1.style.top = `${heightRate - enemySize}px`;
+    // enemy1.style.left = `${enemyEnd - enemySize}px`;
   }
 
   if(enemyHead1 === 'bottom'){
