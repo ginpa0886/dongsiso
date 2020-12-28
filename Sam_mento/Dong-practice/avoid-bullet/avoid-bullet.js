@@ -1,6 +1,10 @@
 const body = document.body;
 const character = document.querySelector('.me');
+const hpSection = document.querySelector('.charcater');
+const gameoverSection = document.querySelector('.gameOver');
+const hpBar = document.querySelector('.HP-bar');
 
+const levelContent = document.querySelector('.level');
 
 // 현재 character 위치 값 설정기 초기위치값을 반영해서 설정
 let up = 0;
@@ -10,6 +14,9 @@ let left = 0;
 // character 속도 증가값 설정 변수
 let speed = 50;
 
+// level content
+let level = 1;
+levelContent.textContent = `${level}`;
 
 
 // character에게 움직임 이벤트
