@@ -64,7 +64,7 @@ router.get('/list', (req, res) => {
   })
 
   const offset = (page - 1) * pageSize
-  const items = users.slice(offset, offset + pageSize).map(({ enable, ...user}) => user)
+  const items = users.slice(offset, offset + pageSize).map(({salt, pw, enable, ...user}) => user)
 
   res.json({
     items,
@@ -124,17 +124,25 @@ router.post('/', (req, res) => {
 router.post('/signin', (req, res) => {
   // 로그인 API 구현
   
-  const {id, salt, pw} = req.body;
+  const {id, pw} = req.body;
   const user = userFindById(id);
+
+  // // 이부분 확인을 해봐야 할것 같네요.
+  // const {salt} = USER_DATA.find((user) => {
+  //   if(user.id === id){
+  //     return user.salt
+  //   };
+  // });
+   
   if(user.enable === 'disable') return false;
   if (!user) {
     res.status(404).json({})
     return
   }
-  
+  const salt = user.salt
   // TODO 2. 로그인시 암호화를 통해서 로그인 확인하기
   // 내가 저장해두었던 salt값을 이용해서 req.body에 있던 사용자가 입력한 pw에 salt작업을 했을 때와 전에 저장해 두었던 값이 서로 같으면 불러올 수 있게 하는 것임.
-  const hashedPw = hash.getHash(salt, pw);
+  const hashedPw = hash.getHash(pw, salt);
 
   if(user.pw !== hashedPw){
     res.status(401).json({message: '입력하신 비밀번호가 올바르지 않습니다.'});
