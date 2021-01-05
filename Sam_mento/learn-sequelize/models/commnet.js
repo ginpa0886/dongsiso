@@ -23,5 +23,7 @@ module.exports = class Commnet extends Sequelize.Model{
     });
   }
 
-  static associate(db) {}
+  static associate(db) {
+    db.Comment.belongsTo(db.Comment, { foreignKey: 'commenter', sourceKey: 'id'});
+  }
 };
