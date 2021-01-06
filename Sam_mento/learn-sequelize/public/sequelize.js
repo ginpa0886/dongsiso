@@ -1,10 +1,10 @@
 //사용자 이름을 누렀을 때 댓글 로딩
-document.querySelectorAll('#user-list tr'.forEach((el) => {
+document.querySelectorAll('#user-list tr').forEach((el) => {
   el.addEventListener('click', function() {
     const id = el.querySelector('td').textContent;
     getComment(id);
   });
-}));
+});
 
 // 사용자 로딩
 async function getUser(){
@@ -16,20 +16,20 @@ async function getUser(){
     tbody.innerHTML = '';
     users.map(function (user){
       const row = document.createElement('tr');
-      row.addEventListener('click', function(){
+      row.addEventListener('click', () => {
         getComment(user.id);
       });
       //로우 셀 추가
       let td = document.createElement('td');
       td.textContent = user.id;
       row.appendChild(td);
-      td = docuemnt.createElement('td');
+      td = document.createElement('td');
       td.textContent = user.name;
       row.appendChild(td);
-      td = docuemnt.createElement('td');
+      td = document.createElement('td');
       td.textContent = user.age;
       row.appendChild(td);
-      td = docuemnt.createElement('td');
+      td = document.createElement('td');
       td.textContent = user.married ? '기혼' : '미혼';
       row.appendChild(td);
       tbody.appendChild(row);
@@ -37,6 +37,7 @@ async function getUser(){
   }catch(err){
     console.error(err);
   }
+}
   //댓글 로딩
   async function getComment(id){
     try{
@@ -46,7 +47,7 @@ async function getUser(){
       tbody.innerHTML = '';
       comments.map(function (comment) {
         //로우셀 추가
-        const row = docuemnt.createElement('tr');
+        const row = document.createElement('tr');
         let td = document.createElement('td');
         td.textContent = comment.id;
         row.appendChild(td);
@@ -64,17 +65,17 @@ async function getUser(){
             return alert('내용을 반드시 입력하셔야 합니다.');
           }
           try{
-            await axios.patch(`/commnet/${comment.id}`, { comment: newComment });
+            await axios.patch(`/comments/${comment.id}`, { comment: newComment });
             getComment(id);
           }catch(err){
             console.error(err);
           }
         });
-        const remove = docuemnt.createElement('button');
+        const remove = document.createElement('button');
         remove.textContent = '삭제';
         remove.addEventListener('click', async () => { // 삭제 클릭 시
           try{
-            await axios.delete(`/comment/${comment.id}`);
+            await axios.delete(`/comments/${comment.id}`);
             getComment(id);
           }catch(err){
             console.error(err);
@@ -100,13 +101,16 @@ async function getUser(){
     const age = e.target.age.value;
     const married = e.target.married.checked;
     if(!name){
+      console.log('에?');
       return alert('이름을 입력하세요.');
     }
     if(!age){
       return alert('나이를 입력하세요.');
     }
     try{
+      console.log('사용자 등록 성공');
       await axios.post('/users', { name, age, married });
+      
       getUser();
     }catch(err){
       console.error(err);
@@ -126,13 +130,14 @@ async function getUser(){
     if(!comment){
       return alert('댓글을 입력하세요.');
     }
+    
     try{
-      await axios.post('/comments', { id, commnet });
+      await axios.post('/comments', { id, comment });
       getComment(id);
+      console.log('실행됐니?');
     }catch(err){
       console.error(err);
     }
     e.target.userid.value = '';
     e.target.comment.value = '';
   });
-}

@@ -1,14 +1,28 @@
 @import './base/reset';
-@import './base/grid';
+// @import './base/grid';
 
 @import './constants/colors';
 @import './constants/fonts';
 
 @import './mixins/typography';
 
-h1{
-  @include base($greend);
+.homepage-log{
+  width: auto;
+  height: 24px;
 }
+
+.header-navi{
+  
+  &:hover{
+    color: $blue;
+  }
+}
+
+
+
+
+
+
 
 // .parent{
 //   .children{

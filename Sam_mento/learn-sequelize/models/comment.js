@@ -16,7 +16,7 @@ module.exports = class Commnet extends Sequelize.Model{
       sequelize,
       timestamps: false,
       modelName: 'Comment',
-      tableName: 'comment',
+      tableName: 'comments',
       paranoid: false,
       charset: 'utf8mb4',
       collate: 'utf8mb4_general_ci',
@@ -24,6 +24,6 @@ module.exports = class Commnet extends Sequelize.Model{
   }
 
   static associate(db) {
-    db.Comment.belongsTo(db.Comment, { foreignKey: 'commenter', sourceKey: 'id'});
+    db.Comment.belongsTo(db.User, { foreignKey: 'commenter', targetKey: 'id'});
   }
 };
