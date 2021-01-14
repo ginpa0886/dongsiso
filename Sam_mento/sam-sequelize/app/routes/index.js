@@ -1,11 +1,12 @@
 const express = require('express');
-const useDate = require('./models/user');
+const userDate = require('./models/user');
 const {getSalt, getExpiredTime, getHash} =require('./lib/hash')
 
 const router = express.Router();
 
 const connectStatus = {}
 
+// url - user로 들어오면 실행되는 곳
 router.route('/')
   // 유저 목록을 조회 API
   .get(async (req, res, next) =>{
@@ -13,7 +14,8 @@ router.route('/')
     const pageSize = req.query.pageSize === undefined ? 2 : +req.query.pageSize;
 
     try{
-      const users = await useDate.findOne({
+      const users = await userDate.findAll({
+        attributes:['id', 'name'],
         limit: pageSize,
         offset: (page - 1) * pageSize,
       });
@@ -28,6 +30,10 @@ router.route('/')
     const {id, pw, name} = req.body
     const salt = getSalt();
 
+    if (!id) {
+      res.status(400).json({message: '"id"가 입력되지 않았습니다.'})
+      return
+    }
     if (!pw) {
       res.status(400).json({message: '"pw"가 입력되지 않았습니다.'})
       return
@@ -38,7 +44,7 @@ router.route('/')
     }
     
     try{
-      const user = await useDate.create({
+      await userDate.create({
         id,
         salt,
         pw: getHash(pw, salt),
@@ -59,13 +65,12 @@ router.route('/')
 router.post('/signin', async(req, res) => {
   const { id, pw } = req.body;
   try{
-    const user = await useDate.findOne({
+    const user = await userDate.findOne({
       where: {
         id: id,
       }
     })
 
-    console.log(user);
     if(!user){
       res.status(404).json({})
       return
@@ -127,13 +132,14 @@ router.use('/:id', (req, res, next) => {
 // 유저 상세 조회 API
 router.get('/:id', async (req, res) =>{
   const { id } = req.params;
-  const user = await useDate.findOne({
+  const user = await userDate.findOne({
     where: {
       id: id,
     }
   })
 
   if (!user) {
+    console.log("1111111111111111111111111111111");
     res.status(404).json({})
     return
   }
@@ -148,7 +154,7 @@ router.get('/:id', async (req, res) =>{
 router.patch('/:id', async (req, res) => {
   const {id} = req.params
   const {pw, name, enabled} = req.body
-  const user = await useDate.findOne({
+  const user = await userDate.findOne({
     where: {
       id: id,
     }
@@ -176,43 +182,51 @@ router.patch('/:id', async (req, res) => {
     res.status(400).json({message: '수정된 값이 존재하지 않습니다.'})
     return
   } else {
-    const updateUser = await useDate.update({
+    try{
+      await userDate.update({
         pw: changeUser.saltPw,
         name: changeUser.name,
         enabled: changeUser.enabled,
         updatedAt: new Date() 
-    },{
-      where:{
-        id: id
-      },
-    });
+      },{
+        where:{
+          id: id
+        },
+      });
 
-    res.json({message: '유저데이터 수정에 성공하였습니다.'})
+      res.json({message: '유저데이터 수정에 성공하였습니다.'})
+    } catch(err) {
+      console.error(err);
+    }
   }
 })
 
 // 유저 삭제 API
 router.delete('/:id', async (req, res) => {
   const { id } = req.params
-  const user = await useDate.findOne({
-    where: {
-      id: id,
+  try{
+    const user = await userDate.findOne({
+      where: {
+        id: id,
+      }
+    })
+    if (!user) {
+      res.status(404).json({})
+      return
     }
-  })
-  if (!user) {
-    res.status(404).json({})
-    return
+  
+    await userDate.update({
+      enabled: 'disable'
+    },{
+      where: {
+        id: id
+      },
+    });
+  
+    res.status(204).send()
+  }catch(err){
+    console.error(err);
   }
-
-  const deleteUser = await useDate.update({
-    enabled: 'disable'
-  },{
-    where: {
-      id: id
-    },
-  });
-
-  res.status(204).send()
 })
 
   module.exports = router;

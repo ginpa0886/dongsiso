@@ -3,12 +3,14 @@ const cors = require('cors');
 const path = require('path');
 
 
+
 const { sequelize } = require('../helper/db');
 const usersRouter = require('./routes/index');
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
+
 
 sequelize.sync({ force: false })
   .then(() => {
