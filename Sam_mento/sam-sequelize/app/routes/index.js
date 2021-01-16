@@ -139,7 +139,6 @@ router.get('/:id', async (req, res) =>{
   })
 
   if (!user) {
-    console.log("1111111111111111111111111111111");
     res.status(404).json({})
     return
   }
@@ -151,6 +150,7 @@ router.get('/:id', async (req, res) =>{
   })
 });
 
+// 유저 수정 API
 router.patch('/:id', async (req, res) => {
   const {id} = req.params
   const {pw, name, enabled} = req.body
@@ -163,38 +163,34 @@ router.patch('/:id', async (req, res) => {
     res.status(400).json({})
     return
   }
+  
+  let isChanged = false;
 
-  const saltPw = getHash(pw, user.salt);
-  const changeUser = { id, saltPw, name, enabled }
-
-  const updateData = []
-  if (saltPw !== user.pw) {
-    updateData.push({key: 'pw', data: saltPw})
+  if(pw){
+    const saltPw = getHash(pw, user.salt);
+    if (saltPw !== user.pw) {
+      user.pw = saltPw;
+      isChanged = true;
+    }
   }
+
   if (name !== user.name) {
-    updateData.push({key: 'name', data: name})
+    user.name = name;
+    isChanged = true;
+    
   }
   if (enabled !== user.enabled) {
-    updateData.push({key: 'enabled', data: enabled})
+    user.enabled = enabled;
+    isChanged = true;
   }
-
-  if (updateData.length === 0) {
+  
+  if (!isChanged) {
     res.status(400).json({message: '수정된 값이 존재하지 않습니다.'})
     return
   } else {
     try{
-      await userDate.update({
-        pw: changeUser.saltPw,
-        name: changeUser.name,
-        enabled: changeUser.enabled,
-        updatedAt: new Date() 
-      },{
-        where:{
-          id: id
-        },
-      });
-
-      res.json({message: '유저데이터 수정에 성공하였습니다.'})
+      await user.save();
+      res.json({message: '유저데이터 수정에 성공하였습니다.'});
     } catch(err) {
       console.error(err);
     }
