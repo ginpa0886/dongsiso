@@ -53,6 +53,7 @@ router.route('/')
       });
       res.status(201).json({
         id,
+        salt,
         name,
       });
     }catch(err){
