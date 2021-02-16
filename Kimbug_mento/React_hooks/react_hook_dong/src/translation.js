@@ -1,5 +1,5 @@
 const translations = {
-  "es": {
+  es: {
     "Hello!": "Hola!",
     Translate: "Traducir"
   }
